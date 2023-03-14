@@ -1,6 +1,7 @@
 #ifndef __NODOGENERAL_H__
 #define __NODOGENERAL_H__
 #include <list>
+
 template< class T >
 class nodoGeneral{
 
@@ -14,7 +15,7 @@ class nodoGeneral{
         void setData(T& val);
         void clearList();
         void addDesc(T& nval);
-        void deleteDesc(T val);
+        void deleteDesc(T& val);
 
 };
 

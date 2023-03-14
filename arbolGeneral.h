@@ -11,13 +11,13 @@ class arbolGeneral{
         arbolGeneral();
         arbolGeneral(T& val);
         ~arbolGeneral();
-        bool esVacio();
+        bool isEmpty();
         nodoGeneral<T>* getRoot();
         void setRoot(nodoGeneral<T>* nraiz);
-        bool insertarNodo(T& padre, T& n);
-        bool eliminarNodo(T& n);
+        bool insertNode(T& padre, T& n);
+        bool deleteNode(T& n);
 
-        bool buscar(T& n);
+        bool search(T& n);
         unsigned int height();
         unsigned int size();
         void preOrder();
