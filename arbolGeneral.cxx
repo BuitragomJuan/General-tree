@@ -3,67 +3,115 @@
 #include <iostream>
 using namespace std;
 
-
-arbolGeneral::arbolGeneral(){
-
-}
-
 template <class T>
-arbolGeneral::arbolGeneral(T& val ){
+arbolGeneral<T>::arbolGeneral(T& val ){
 
-}
+    nodoGeneral<T>* nodo = new nodoGeneral<T>;
+    nodo->setDato(val);
 
-arbolGeneral::~arbolGeneral(){
-
-}
-
-bool arbolGeneral::isEmpty(){
-
-}
-
-template< class T>
-nodoGeneral<T>* arbolGeneral::getRoot(){
-
-    return this;
-}
-
-template <class T>
-void arbolGeneral::setRoot(nodoGeneral<T>* nroot){
-
-}
-
-template< class T >
-bool arbolGeneral::insertNode(T& padre, T& n){
-
-}
-
-template <class T>
-bool arbolGeneral::deleteNode(T& n){
+    this->root=nodo;
 
 }
 
 template<class T>
-bool arbolGeneral::search(T& n){
+arbolGeneral<T>::~arbolGeneral(){
+    
+    delete this->root;
+    this->root= NULL;
+
+}
+
+template<class T>
+bool arbolGeneral<T>::isEmpty(){
+
+    if(this->root == NULL){
+        
+        return true;
+    }else{return false;}
+
+}
+
+template< class T>
+nodoGeneral<T>* arbolGeneral<T>::getRoot(){
+
+    return this->root;
+
+}
+
+template <class T>
+void arbolGeneral<T>::setRoot(nodoGeneral<T>* nroot){
+
+    this->root = nroot;
+
+}
+
+template< class T >
+bool arbolGeneral<T>::insertNode(T& padre, T& n){
+
+    bool added=false,existence=false;
+
+    if(this->isEmpty()){
+        
+        ArbolGeneral<T>* tree = new ArbolGeneral<T>(n);
+        added = true;
+
+    }else{
+
+        existence = this->search(padre);
+
+        if(existence){
+
+            nodoGeneral<T>* fnode = new nodoGeneral<T>();
+
+            
+
+
+            
+        }else{}
+
+        
+
+    }
+
+
+    return added;
+
+}
+
+template <class T>
+bool arbolGeneral<T>::deleteNode(T& n){
+
+}
+
+template<class T>
+bool arbolGeneral<T>::search(T& n){
+
+    
     
 }
 
-unsigned int arbolGeneral::height(){
+template<class T>
+unsigned int arbolGeneral<T>::height(){
 
 }
 
-unsigned int arbolGeneral::size(){
+template<class T>
+unsigned int arbolGeneral<T>::size(){
 
 
 }
 
-void arbolGeneral::preOrder(){
+template<class T>
+void arbolGeneral<T>::preOrder(){
 
 }
 
-void arbolGeneral::inOrder(){
+template<class T>
+void arbolGeneral<T>::inOrder(){
     
 }
 
-void arbolGeneral::posOrder(){
+template<class T>
+void arbolGeneral<T>::posOrder(){
     
 }

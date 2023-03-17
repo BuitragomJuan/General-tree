@@ -1,47 +1,49 @@
 #include "nodoGeneral.h"
 #include <iostream>
+#include <list>
 using namespace std;
 
 
-nodoGeneral::nodoGeneral(){
+template<class T>
+nodoGeneral<T>::nodoGeneral(){
 
 }
 
-nodoGeneral::~nodoGeneral(){
-
-
-}
-
-void nodoGeneral::setData(T& data){
-
-
-}
-
-template <class T>
-T& nodoGeneral::getData(){
-
-}
-
-template <class T>
-void nodoGeneral::setData(T& value){
-
-
-}
-
-void nodoGeneral::clearList(){
-
-
-}
-
-template <class T>
-void nodoGeneral::addDesc(T& nval){
-
+template<class T>
+nodoGeneral<T>::~nodoGeneral(){
 
 
 }
 
 template<class T>
-void nodoGeneral::deleteDesc(T& val){
+void nodoGeneral<T>::setData(T& data){
+
+    this->data = data;
+
+}
+
+template <class T>
+T& nodoGeneral<T>::getData(){
+
+    return this->data;
+
+}
+
+template<class T>
+void nodoGeneral<T>::clearList(){
+
+
+}
+
+template <class T>
+void nodoGeneral<T>::addDesc(T& nval){
+
+    this->desc.push_back(nval);
+
+}
+
+template<class T>
+void nodoGeneral<T>::deleteDesc(T& val){
 
 
 }
