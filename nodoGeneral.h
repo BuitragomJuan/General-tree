@@ -16,7 +16,7 @@ class nodoGeneral{
         void clearList();
         void addDesc(T& nval);
         void deleteDesc(T& val);
-
+        bool leafNode();
 };
 
 #include "nodoGeneral.cxx"

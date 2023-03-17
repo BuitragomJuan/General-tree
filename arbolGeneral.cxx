@@ -45,6 +45,13 @@ void arbolGeneral<T>::setRoot(nodoGeneral<T>* nroot){
 
 }
 
+
+template<class T>
+bool arbolGeneral<T>::insertNode(nodoGeneral<T>*,T& padre){
+
+
+}
+
 template< class T >
 bool arbolGeneral<T>::insertNode(T& padre, T& n){
 
@@ -62,6 +69,9 @@ bool arbolGeneral<T>::insertNode(T& padre, T& n){
         if(existence){
 
             nodoGeneral<T>* fnode = new nodoGeneral<T>();
+
+
+            
 
             
 
@@ -92,6 +102,45 @@ bool arbolGeneral<T>::search(T& n){
 
 template<class T>
 unsigned int arbolGeneral<T>::height(){
+
+    if(this->isEmpty()){
+        return -1;
+
+    }else{
+
+        return this->height(this->root);
+
+    }
+
+}
+
+template<class T>
+int arbolGeneral<T>::height(nodoGeneral<T>* node){
+
+    int h=-1;
+    list<nodoGeneral<T>*>::iterator it_desc;
+    
+    if(node->leafNode()){
+
+        alt = 0;
+    }else{
+
+        int desc_h;
+        list<nodoGeneral<T>*>::iterator it_desc;
+        
+        for(it_desc = node.desc.begin(); it_desc != node.desc.end(); it_desc++){
+            
+            desc_h = this->height(*it_desc);
+            
+            if(h < desc_h+1){
+
+                h = desc_h+1;
+            }
+
+        }
+    }
+
+    return alt;
 
 }
 
