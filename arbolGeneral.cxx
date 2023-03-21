@@ -3,6 +3,11 @@
 #include <iostream>
 using namespace std;
 
+template< class T>
+arbolGeneral<T>::arbolGeneral(){
+    this->root = NULL:
+}
+
 template <class T>
 arbolGeneral<T>::arbolGeneral(T& val ){
 
@@ -46,57 +51,43 @@ void arbolGeneral<T>::setRoot(nodoGeneral<T>* nroot){
 }
 
 
-template<class T>
-bool arbolGeneral<T>::insertNode(nodoGeneral<T>*,T& padre){
-
-
-}
-
 template< class T >
 bool arbolGeneral<T>::insertNode(T& padre, T& n){
 
-    bool added=false,existence=false;
+    //if the tree is empty, new node and assign it as the root of it
 
-    if(this->isEmpty()){
-        
-        ArbolGeneral<T>* tree = new ArbolGeneral<T>(n);
-        added = true;
-
-    }else{
-
-        existence = this->search(padre);
-
-        if(existence){
-
-            nodoGeneral<T>* fnode = new nodoGeneral<T>();
-
-
-            
-
-            
-
-
-            
-        }else{}
-
-        
-
-    }
-
-
-    return added;
+    //if there's at least one node in the tree:
+    // -check if actual node is == to father's given node
+    // -if it is the father, insert the new node there
+    //-if it's not, check every son and call insert in there
 
 }
 
 template <class T>
 bool arbolGeneral<T>::deleteNode(T& n){
 
+    //if the tree is empty return
+
+    //if root is the one to be deleted
+    // -delete in root
+    // -set root to NULL
+
+    //if there's at least one node on the tree:
+    // -if one of the sons is the one i want to delete:
+    // -if none of the sons is the one i want to delete:
+    // -check every son node and call delete there
+
+
+
 }
 
 template<class T>
 bool arbolGeneral<T>::search(T& n){
 
-    
+    //if tree isn't empty:
+    //compare actual node data with given data as parameter
+    //if it is, return it was found
+    //if it is not, for every son node call search
     
 }
 
@@ -145,22 +136,49 @@ int arbolGeneral<T>::height(nodoGeneral<T>* node){
 }
 
 template<class T>
-unsigned int arbolGeneral<T>::size(){
+void arbolGeneral<T>::preOrder(nodoGeneral<T>* node){
+
+    cout << node->getData()<<" ";
+
+    list<nodoGeneral<T>* >::iterator it;
+
+    for(it = this->desc.begin(); it != this->desc.end(); it++){
+        
+        this->preOrder(*it);
+    }
 
 
-}
-
-template<class T>
-void arbolGeneral<T>::preOrder(){
 
 }
 
 template<class T>
 void arbolGeneral<T>::inOrder(){
+
+    //NON RECURSIVE (NOR ITERATIVE)
+    //locate in the root
+    //place the root in a queue
+    //create a cycle while there's somtng on the queue
+    // -substract the first one available on the queue
+    // print its data
+    // insert in the queue all its descendants
     
 }
 
 template<class T>
 void arbolGeneral<T>::posOrder(){
+
+    //call posOrder on every descendant 
+    //print on screen the value of the actual node
     
+}
+
+
+template<class T>
+unsigned int arbolGeneral<T>::size(){
+
+    //if empty return 0
+    //for each son, call size
+    //store all the sizes in a variable
+    //return all the accumulated sizes + 1 
+
 }

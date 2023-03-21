@@ -15,18 +15,18 @@ class arbolGeneral{
         nodoGeneral<T>* getRoot();
         void setRoot(nodoGeneral<T>* nraiz);
         bool insertNode(T& padre, T& n);
-        bool insertNode(nodoGeneral<T>* node, T& padre);
+        nodoGeneral<T>* insertNode(T& padre);
         bool deleteNode(T& n);
 
         bool search(T& n);
         unsigned int height();
         int height(nodoGeneral<T>* node)
         unsigned int size();
-        void preOrder();
+        void preOrder(nodoGeneral<T>* node);
         void inOrder();
         void posOrder();
 
 };
 
 #include "arbolGeneral.cxx"
-#endif 
+#endif

@@ -15,7 +15,7 @@ class nodoGeneral{
         void setData(T& val);
         void clearList();
         void addDesc(T& nval);
-        void deleteDesc(T& val);
+        bool deleteDesc(T& val);
         bool leafNode();
 };
 
