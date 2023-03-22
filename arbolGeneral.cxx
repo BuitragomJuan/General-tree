@@ -55,18 +55,30 @@ template< class T >
 bool arbolGeneral<T>::insertNode(T& padre, T& n){
 
     //if the tree is empty, new node and assign it as the root of it
+    if(this->isEmpty()){
 
-    //if there's at least one node in the tree:
-    // -check if actual node is == to father's given node
-    // -if it is the father, insert the new node there
-    //-if it's not, check every son and call insert in there
+        nodoGeneral<T> node = new nodoGeneral<T>();
+
+        this->setRoot(node);
+    }else{
+
+        //if there's at least one node in the tree:
+        // -check if actual node is == to father's given node
+        // -if it is the father, insert the new node there
+        //-if it's not, check every son and call insert in there
+
+    }
 
 }
+
 
 template <class T>
 bool arbolGeneral<T>::deleteNode(T& n){
 
     //if the tree is empty return
+    if(this->isEmpty()){
+        return false;
+    }
 
     //if root is the one to be deleted
     // -delete in root
@@ -84,10 +96,16 @@ bool arbolGeneral<T>::deleteNode(T& n){
 template<class T>
 bool arbolGeneral<T>::search(T& n){
 
-    //if tree isn't empty:
-    //compare actual node data with given data as parameter
-    //if it is, return it was found
-    //if it is not, for every son node call search
+    if(this->isEmpty()){
+        
+        return false;
+    }else{
+        //compare actual node data with given data as parameter
+        //if it is, return it was found
+        //if it is not, for every son node call search
+
+    }
+    
     
 }
 

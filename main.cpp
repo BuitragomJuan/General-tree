@@ -34,7 +34,7 @@ int main(){
             added = tree->insertNode(fnode,nnode);
 
             if(!added)
-                cout<<"el nodo padre no existe en el arbol."<<endl
+                cout<<"el nodo padre no existe en el arbol."<<endl;
             else
                 cout<<"nodo agregado correctamente al arbol"<<endl;
             
